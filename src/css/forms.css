@@ -1,0 +1,47 @@
+/* forms.css – Form Elements & Layout */
+
+/* 1. Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-md);
+}
+
+/* 2. Labels */
+.form-group label {
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-xs);
+  color: var(--muted);
+}
+
+/* 3. Inputs & Selects */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  padding: var(--space-sm);
+  font-size: var(--fs-md);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease;
+}
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* 4. Checkbox & Radio */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  margin-right: var(--space-xs);
+}
+
+/* 5. Form Buttons */
+.form-actions {
+  margin-top: var(--space-md);
+}
+.form-actions .button {
+  margin-right: var(--space-sm);
+}

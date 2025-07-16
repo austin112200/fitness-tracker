@@ -1,0 +1,37 @@
+/* charts.css – Chart.js Container & Legends */
+
+/* 1. Chart Container */
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: var(--space-lg);
+}
+
+/* 2. Canvas Styling */
+canvas {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* 3. Legend Overrides */
+.chartjs-legend {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+  font-size: var(--fs-sm);
+}
+.chartjs-legend li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.chartjs-legend span {
+  display: inline-block;
+  width: var(--space-sm);
+  height: var(--space-sm);
+  margin-right: var(--space-xs);
+  border-radius: 50%;
+}

@@ -1,0 +1,73 @@
+/* components.css – Reusable UI Components */
+
+/* 1. Button Styles */
+.button {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease;
+  text-align: center;
+}
+.button:hover {
+  background-color: var(--primary-hover);
+}
+.button--secondary {
+  background-color: var(--secondary);
+}
+.button--danger {
+  background-color: var(--danger);
+}
+
+/* 2. Card Component */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: var(--space-lg);
+}
+
+/* 3. Progress Bar */
+.progress {
+  background: var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.progress__bar {
+  height: var(--space-sm);
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+/* 4. Card Header */
+.card__header {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-sm);
+}
+
+/* 5. Tooltip Base */
+.tooltip {
+  position: relative;
+  cursor: help;
+}
+.tooltip:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: #fff;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+  z-index: 10;
+}

@@ -1,0 +1,28 @@
+/* tabs.css – Tab Navigation Styles */
+
+/* 1. Tab Container */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: var(--space-md);
+}
+
+/* 2. Tab Button */
+.tab {
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--fs-md);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  border-bottom: 3px solid transparent;
+}
+.tab:hover {
+  color: var(--text);
+}
+
+/* 3. Active Tab */
+.tab--active {
+  color: var(--text);
+  border-bottom-color: var(--primary);
+  font-weight: 600;
+}

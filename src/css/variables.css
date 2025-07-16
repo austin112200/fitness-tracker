@@ -1,0 +1,46 @@
+/* variables.css – Design Tokens */
+
+/* Color Palette */
+:root {
+  /* Primary Brand Colors */
+  --primary: #4caf50;
+  --primary-hover: #45a045;
+  --secondary: #2196f3;
+  --accent: #ff5722;
+
+  /* Semantic Colors */
+  --success: #4caf50;
+  --warning: #ff9800;
+  --danger:  #f44336;
+  --info:    #03a9f4;
+
+  /* Neutrals */
+  --bg:      #f4f4f4;
+  --card-bg: #ffffff;
+  --border:  #e0e0e0;
+  --text:    #212121;
+  --heading: #111111;
+  --muted:   #757575;
+
+  /* Typography Scale */
+  --fs-xs: 0.75rem;   /* 12px */
+  --fs-sm: 0.875rem;  /* 14px */
+  --fs-md: 1rem;      /* 16px */
+  --fs-lg: 1.25rem;   /* 20px */
+  --fs-xl: 1.5rem;    /* 24px */
+  --fs-2xl: 2rem;     /* 32px */
+
+  /* Spacing Scale */
+  --space-xxs: 4px;
+  --space-xs:  8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 40px;
+  --space-xxl: 56px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+}

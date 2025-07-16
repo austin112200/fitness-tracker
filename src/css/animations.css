@@ -1,0 +1,72 @@
+/* animations.css – Smooth, clean animations */
+
+/* 1. Global Transitions */
+a, button, .tab, .card, input, select {
+  transition: all 0.25s ease-in-out;
+}
+
+/* 2. Button Hover & Active */
+.button:hover {
+  transform: scale(1.03);
+  background-color: var(--primary-hover);
+}
+.button:active {
+  transform: scale(0.98);
+}
+
+/* 3. Card Hover Lift */
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* 4. Tab Underline Slide */
+.tab {
+  position: relative;
+}
+.tab::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+.tab:hover::after,
+.tab--active::after {
+  width: 100%;
+}
+
+/* 5. Progress Bar Animation */
+.progress__bar {
+  transition: width 0.5s ease-out;
+}
+
+/* 6. Tooltip Animation */
+.tooltip::after {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: all 0.2s ease;
+}
+.tooltip:hover::after {
+  opacity: 1;
+  transform: translateY(-12px);
+}
+
+/* 7. Fade In Utility */
+.fade-in {
+  animation: fadeIn 0.5s ease-in both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 8. Theme Toggle Rotate */
+.theme-toggle:hover {
+  transform: rotate(10deg);
+}
+.theme-toggle:active {
+  transform: rotate(-5deg) scale(0.95);
+}

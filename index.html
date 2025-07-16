@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fitness Tracker</title>
+
+  <!-- React & Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="src/css/base.css" />
+  <link rel="stylesheet" href="src/css/variables.css" />
+  <link rel="stylesheet" href="src/css/layout.css" />
+  <link rel="stylesheet" href="src/css/components.css" />
+  <link rel="stylesheet" href="src/css/forms.css" />
+  <link rel="stylesheet" href="src/css/tabs.css" />
+  <link rel="stylesheet" href="src/css/charts.css" />
+  <link rel="stylesheet" href="src/css/goals.css" />
+  <link rel="stylesheet" href="src/css/login.css" />
+  <link rel="stylesheet" href="src/css/themes.css" />
+  <link rel="stylesheet" href="src/css/animations.css" />
+
+
+  <!-- Fallback Quick Style -->
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    input, select, button { padding: 6px; margin-right: 6px; }
+    button { cursor: pointer; }
+    h1, h2 { color: #333; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Core -->
+  <script type="text/babel" src="src/UserContext.js"></script>
+  <script type="text/babel" src="src/App.js"></script>
+
+  <!-- Components -->
+  <script type="text/babel" src="src/components/Login.js"></script>
+  <script type="text/babel" src="src/components/WorkoutForm.js"></script>
+  <script type="text/babel" src="src/components/WorkoutList.js"></script>
+  <script type="text/babel" src="src/components/Chart.js"></script>
+  <script type="text/babel" src="src/components/GoalTracker.js"></script>
+  <script type="text/babel" src="src/components/OneRMChart.js"></script>
+  <script type="text/babel" src="src/components/Records.js"></script>
+  <script type="text/babel" src="src/components/Summary.js"></script>
+  <script type="text/babel" src="src/components/Settings.js"></script>
+
+  <!-- Mount inside Context -->
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(
+      <UserProvider>
+        <App />
+      </UserProvider>
+    );
+  </script>
+</body>
+</html>

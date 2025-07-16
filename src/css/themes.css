@@ -1,0 +1,31 @@
+/* themes.css – Light & Dark Mode Themes */
+
+/* 1. Default (Light) Theme */
+:root {
+  --bg:        #f4f4f4;
+  --card-bg:   #ffffff;
+  --text:      #212121;
+  --heading:   #111111;
+  --border:    #e0e0e0;
+}
+
+/* 2. Dark Theme Overrides */
+body.dark {
+  --bg:        #121212;
+  --card-bg:   #1e1e1e;
+  --text:      #e0e0e0;
+  --heading:   #ffffff;
+  --border:    #333333;
+}
+
+/* 3. Utility to toggle */
+.theme-toggle {
+  position: fixed;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+}
