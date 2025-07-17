@@ -33,13 +33,6 @@ A web-based fitness tracker that lets you log workouts, set goals, view progress
 - Cloud sync / authentication
 - More advanced charts and analytics
 - Social workout sharing
-- Dark/light theme toggle
-
----
-
-## 📸 Screenshots
-
-(Add your screenshots here)
 
 ---
 
