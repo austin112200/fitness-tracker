@@ -69,10 +69,14 @@ function GoalTracker({ workouts }) {
 
       <div>
         <label>Target Area:</label>
-        <select value={targetArea} onChange={(e) => {
-          setTargetArea(e.target.value);
-          setExercise("");
-        }}>
+        <select
+          value={targetArea}
+          onChange={(e) => {
+            setTargetArea(e.target.value);
+            setExercise("");
+          }}
+          aria-label="Select target area"
+        >
           <option value="">Select</option>
           {Object.keys(areas).map((area) => (
             <option key={area}>{area}</option>
@@ -80,17 +84,46 @@ function GoalTracker({ workouts }) {
         </select>
 
         <label>Exercise:</label>
-        <select value={exercise} onChange={(e) => setExercise(e.target.value)}>
+        <select
+          value={exercise}
+          onChange={(e) => setExercise(e.target.value)}
+          aria-label="Select exercise"
+        >
           <option value="">Select</option>
           {(areas[targetArea] || []).map((ex) => (
             <option key={ex}>{ex}</option>
           ))}
         </select>
 
-        <input type="number" placeholder="Target Weight (kg)" value={weight} onChange={(e) => setWeight(e.target.value)} />
-        <input type="number" placeholder="Target Reps" value={reps} onChange={(e) => setReps(e.target.value)} />
-        <input type="date" value={deadline} onChange={(e) => setDeadline(e.target.value)} />
-        <button onClick={handleAddGoal}>➕ Add Goal</button>
+        <input
+          type="number"
+          placeholder="Target Weight (kg)"
+          value={weight}
+          onChange={(e) => setWeight(e.target.value)}
+          aria-label="Target weight in kilograms"
+        />
+        <input
+          type="number"
+          placeholder="Target Reps"
+          value={reps}
+          onChange={(e) => setReps(e.target.value)}
+          aria-label="Target repetitions"
+        />
+        <input
+          type="date"
+          value={deadline}
+          onChange={(e) => setDeadline(e.target.value)}
+          aria-label="Goal deadline"
+        />
+
+        <button
+          onClick={handleAddGoal}
+          className="animated-button"
+          aria-label="Add a workout goal"
+          role="button"
+        >
+          ➕ Add Goal
+        </button>
       </div>
 
       <hr />
@@ -111,7 +144,9 @@ function GoalTracker({ workouts }) {
             return (
               <li key={i} style={{ marginBottom: "20px" }}>
                 <div><strong>{goal.exercise}</strong> ({goal.targetArea})</div>
-                <div>🎯 {goal.weight} kg × {goal.reps} reps by 📅 {goal.deadline}</div>
+                <div>
+                  🎯 {goal.weight} kg × {goal.reps} reps by 📅 {goal.deadline}
+                </div>
 
                 <div style={{
                   background: "#eee",
@@ -136,7 +171,15 @@ function GoalTracker({ workouts }) {
                       : `📊 Progress: ${progress}%`}
                 </div>
 
-                <button style={{ marginTop: "6px" }} onClick={() => handleDelete(i)}>🗑 Delete</button>
+                <button
+                  className="animated-button"
+                  style={{ marginTop: "6px" }}
+                  onClick={() => handleDelete(i)}
+                  aria-label={`Delete goal for ${goal.exercise}`}
+                  role="button"
+                >
+                  🗑 Delete
+                </button>
               </li>
             );
           })}

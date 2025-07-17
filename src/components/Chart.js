@@ -28,17 +28,26 @@ function ProgressChart({ workouts }) {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,  // Allow height via CSS
         plugins: {
-          title: { display: true, text: 'Workout Volume by Date' }
+          title: {
+            display: true,
+            text: 'Workout Volume by Date'
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
         }
       }
     });
   }, [workouts]);
 
   return (
-    <div>
-      <h2>Progress Chart</h2>
-      <canvas ref={canvasRef} height="300"></canvas>
+    <div className="chart-container">
+      <h2>📊 Progress Chart</h2>
+      <canvas ref={canvasRef}></canvas>
     </div>
   );
 }

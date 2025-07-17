@@ -18,6 +18,8 @@ body {
   background-color: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+  min-height: 100vh;
 }
 
 /* 3. Headings */
@@ -25,29 +27,88 @@ h1, h2, h3, h4, h5 {
   color: var(--heading);
   line-height: 1.2;
   margin-bottom: var(--space-sm);
+  font-weight: 600;
 }
 
 /* 4. Links, lists, images */
 a {
   color: var(--primary);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
-a:hover { text-decoration: underline; }
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-dark);
+}
 
 ul, ol {
   list-style: none;
+  padding-left: 1.25rem; /* for nested lists */
 }
 
 img {
   max-width: 100%;
   display: block;
+  height: auto;
+  border-radius: 4px;
 }
 
 /* 5. Form elements */
-input, select, button, textarea {
+input,
+select,
+button,
+textarea {
   font-family: inherit;
   font-size: inherit;
+  color: inherit;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+}
+
+/* Buttons */
+button {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
 }
 
 /* 6. Utility helpers */
-.hidden { display: none !important; }
+.hidden {
+  display: none !important;
+}
+
+/* 7. Responsive Typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}

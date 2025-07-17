@@ -34,35 +34,51 @@ function Summary({ workouts }) {
   const sorted = Object.entries(summary).sort();
 
   return (
-    <div>
+    <div className="tab-panel tab-panel--active fade-in">
       <h2>📑 {view === "week" ? "Weekly" : "Monthly"} Summary</h2>
-      <div style={{ marginBottom: "10px" }}>
-        <button onClick={() => setView("week")}>Weekly</button>
-        <button onClick={() => setView("month")}>Monthly</button>
+      <div className="summary-buttons">
+        <button
+          className={`tab-toggle ${view === "week" ? "active-tab" : ""}`}
+          onClick={() => setView("week")}
+        >
+          Weekly
+        </button>
+        <button
+          className={`tab-toggle ${view === "month" ? "active-tab" : ""}`}
+          onClick={() => setView("month")}
+        >
+          Monthly
+        </button>
       </div>
 
-      <table border="1" cellPadding="6">
-        <thead>
-          <tr>
-            <th>{view === "week" ? "Week" : "Month"}</th>
-            <th>Total Volume (kg)</th>
-            <th>Calories Burned</th>
-            <th>Sessions</th>
-            <th>Unique Exercises</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sorted.map(([key, val]) => (
-            <tr key={key}>
-              <td>{key}</td>
-              <td>{val.volume}</td>
-              <td>{Math.round(val.kcal)} kcal</td>
-              <td>{val.sessions}</td>
-              <td>{val.exercises.size}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {sorted.length === 0 ? (
+        <p>No data yet.</p>
+      ) : (
+        <div className="table-container">
+          <table className="styled-table">
+            <thead>
+              <tr>
+                <th>{view === "week" ? "Week Starting" : "Month"}</th>
+                <th>Total Volume (kg)</th>
+                <th>Calories Burned</th>
+                <th>Sessions</th>
+                <th>Unique Exercises</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sorted.map(([key, val]) => (
+                <tr key={key}>
+                  <td>{key}</td>
+                  <td>{val.volume}</td>
+                  <td>{Math.round(val.kcal)} kcal</td>
+                  <td>{val.sessions}</td>
+                  <td>{val.exercises.size}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }

@@ -44,6 +44,7 @@ function OneRMChart({ workouts }) {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           title: {
             display: true,
@@ -74,9 +75,8 @@ function OneRMChart({ workouts }) {
   };
 
   return (
-    <div>
-      <h2>📈 One-Rep Max Progress</h2>
-      <canvas ref={chartRef} height="300"></canvas>
+    <div className="chart-container">
+      <canvas ref={chartRef} style={{ width: "100%", height: "100%" }}></canvas>
     </div>
   );
 }

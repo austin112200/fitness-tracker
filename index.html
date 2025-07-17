@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fitness Tracker</title>
 
   <!-- React & Babel -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin defer></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
 
-  <!-- Style -->
-  <link rel="stylesheet" href="src/css/base.css" />
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="src/css/variables.css" />
+  <link rel="stylesheet" href="src/css/base.css" />
   <link rel="stylesheet" href="src/css/layout.css" />
   <link rel="stylesheet" href="src/css/components.css" />
   <link rel="stylesheet" href="src/css/forms.css" />
@@ -23,8 +24,7 @@
   <link rel="stylesheet" href="src/css/themes.css" />
   <link rel="stylesheet" href="src/css/animations.css" />
 
-
-  <!-- Fallback Quick Style -->
+  <!-- Fallback Inline Styles -->
   <style>
     body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
     input, select, button { padding: 6px; margin-right: 6px; }
@@ -32,11 +32,14 @@
     h1, h2 { color: #333; }
   </style>
 </head>
-<body>
-  <div id="root"></div>
 
-  <!-- Core -->
+<body>
+  <div id="root" role="main" aria-label="Fitness Tracker Application"></div>
+
+  <!-- React Context -->
   <script type="text/babel" src="src/UserContext.js"></script>
+
+  <!-- Main App -->
   <script type="text/babel" src="src/App.js"></script>
 
   <!-- Components -->
@@ -50,7 +53,7 @@
   <script type="text/babel" src="src/components/Summary.js"></script>
   <script type="text/babel" src="src/components/Settings.js"></script>
 
-  <!-- Mount inside Context -->
+  <!-- ReactDOM Mount -->
   <script type="text/babel">
     const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render(

@@ -1,47 +1,77 @@
-/* forms.css – Form Elements & Layout */
+/* forms.css – Polished Form Elements & Layout */
 
 /* 1. Form Group */
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: var(--space-xs);
   margin-bottom: var(--space-md);
 }
 
 /* 2. Labels */
 .form-group label {
   font-size: var(--fs-sm);
-  margin-bottom: var(--space-xs);
+  font-weight: 500;
   color: var(--muted);
+  cursor: pointer;
 }
 
-/* 3. Inputs & Selects */
+/* 3. Inputs, Selects, and Textareas */
 input[type="text"],
 input[type="number"],
 input[type="date"],
-select {
-  padding: var(--space-sm);
+input[type="email"],
+select,
+textarea {
+  padding: 0.65em 1em;
   font-size: var(--fs-md);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  transition: border-color 0.2s ease;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
+
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
   outline: none;
   border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2); /* subtle focus ring */
 }
 
-/* 4. Checkbox & Radio */
+/* 4. Textarea specific */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* 5. Checkbox & Radio */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
 input[type="checkbox"],
 input[type="radio"] {
-  width: auto;
-  margin-right: var(--space-xs);
+  accent-color: var(--primary);
+  width: 1em;
+  height: 1em;
 }
 
-/* 5. Form Buttons */
+/* 6. Form Actions (Buttons Area) */
 .form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
   margin-top: var(--space-md);
 }
-.form-actions .button {
-  margin-right: var(--space-sm);
+
+/* 7. Error Message (Optional) */
+.form-error {
+  font-size: var(--fs-xs);
+  color: var(--danger);
+  margin-top: var(--space-xs);
 }

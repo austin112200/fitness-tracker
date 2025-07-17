@@ -4,8 +4,10 @@
 :root {
   /* Primary Brand Colors */
   --primary: #4caf50;
-  --primary-hover: #45a045;
+  --primary-hover: #388e3c;         /* Darker green for hover */
+  --primary-active: #2e7d32;        /* Even darker for click */
   --secondary: #2196f3;
+  --secondary-hover: #1976d2;
   --accent: #ff5722;
 
   /* Semantic Colors */
@@ -21,6 +23,10 @@
   --text:    #212121;
   --heading: #111111;
   --muted:   #757575;
+
+  /* Text on Backgrounds */
+  --text-on-primary: #080000;
+  --text-on-secondary: #ffffff;
 
   /* Typography Scale */
   --fs-xs: 0.75rem;   /* 12px */

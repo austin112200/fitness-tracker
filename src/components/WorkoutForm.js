@@ -96,13 +96,15 @@ function WorkoutForm({ onAdd }) {
         </div>
 
         <div style={{ marginTop: "12px" }}>
-          <button type="submit" style={{
-            padding: "8px 16px",
-            backgroundColor: "#4caf50",
-            color: "white",
-            border: "none",
-            borderRadius: "6px"
-          }}>✅ Add Workout</button>
+          <button
+            type="submit"
+            className="animated-button"
+            aria-label="Add workout"
+            role="button"
+          >
+            ✅ Add Workout
+          </button>
+
         </div>
       </fieldset>
 
